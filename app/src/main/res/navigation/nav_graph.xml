@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/startFragment"
-        android:name="com.example.kuchnia_polska.StartFragment"
+        android:name="com.example.kuchnia_polska.ui.StartFragment"
         android:label="fragment_start"
         tools:layout="@layout/fragment_start" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/menuChoiceFragment"
-        android:name="com.example.kuchnia_polska.MenuChoiceFragment"
+        android:name="com.example.kuchnia_polska.ui.MenuChoiceFragment"
         android:label="fragment_menu_choice"
         tools:layout="@layout/fragment_menu_choice" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/readyMealFragment"
-        android:name="com.example.kuchnia_polska.ReadyMealFragment"
+        android:name="com.example.kuchnia_polska.ui.ReadyMealFragment"
         android:label="fragment_ready_meal"
         tools:layout="@layout/fragment_ready_meal" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/customMealFragment"
-        android:name="com.example.kuchnia_polska.CustomMealFragment"
+        android:name="com.example.kuchnia_polska.ui.CustomMealFragment"
         android:label="fragment_custom_meal"
         tools:layout="@layout/fragment_custom_meal" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/summaryFragment"
-        android:name="com.example.kuchnia_polska.SummaryFragment"
+        android:name="com.example.kuchnia_polska.ui.SummaryFragment"
         android:label="fragment_summary"
         tools:layout="@layout/fragment_summary" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/totalBarFragment"
-        android:name="com.example.kuchnia_polska.TotalBarFragment"
+        android:name="com.example.kuchnia_polska.ui.TotalBarFragment"
         android:label="fragment_total_bar"
         tools:layout="@layout/fragment_total_bar" />
 </navigation>
