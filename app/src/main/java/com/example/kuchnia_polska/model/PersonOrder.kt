@@ -1,4 +1,4 @@
-package com.example.polskakuchnia.model
+package com.example.kuchnia_polska.model
 
 data class PersonOrder(
     var osobaNazwa: String = "",
