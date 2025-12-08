@@ -7,17 +7,17 @@
     <fragment
         android:id="@+id/startFragment"
         android:name="com.example.kuchnia_polska.ui.StartFragment"
-        android:label="Start" >
-        <action android:id="@+id/action_start_to_menuChoice" app:destination="@id/menuChoiceFragment" />
-    </fragment>
+        android:label="Start" />
 
     <fragment
         android:id="@+id/menuChoiceFragment"
         android:name="com.example.kuchnia_polska.ui.MenuChoiceFragment"
-        android:label="Wybór menu" >
-        <action android:id="@+id/action_menuChoice_to_ready" app:destination="@id/readyMealFragment" />
-        <action android:id="@+id/action_menuChoice_to_custom" app:destination="@id/customMealFragment" />
-    </fragment>
+        android:label="Zamówienie" />
+
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.example.kuchnia_polska.ui.SummaryFragment"
+        android:label="Podsumowanie" />
 
     <fragment
         android:id="@+id/readyMealFragment"
@@ -28,9 +28,4 @@
         android:id="@+id/customMealFragment"
         android:name="com.example.kuchnia_polska.ui.CustomMealFragment"
         android:label="Komponuj sam" />
-
-    <fragment
-        android:id="@+id/summaryFragment"
-        android:name="com.example.kuchnia_polska.ui.SummaryFragment"
-        android:label="Podsumowanie" />
 </navigation>
