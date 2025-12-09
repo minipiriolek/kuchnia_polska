@@ -1,60 +1,58 @@
 package com.example.kuchnia_polska.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.example.kuchnia_polska.R
+import com.example.kuchnia_polska.viewmodel.OrderViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class SummaryFragment : Fragment(R.layout.fragment_summary) {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SummaryFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class SummaryFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private val viewModel: OrderViewModel by activityViewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_summary, container, false)
-    }
+        val tvSummary = view.findViewById<TextView>(R.id.tvSummaryList)
+        val tvTotal = view.findViewById<TextView>(R.id.tvTotal)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SummaryFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SummaryFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        val btnSubmit = view.findViewById<Button>(R.id.btnSubmit)
+        val btnNew = view.findViewById<Button>(R.id.btnNewOrder)
+        val btnClear = view.findViewById<Button>(R.id.btnClearAll)
+
+        viewModel.wszystkie.observe(viewLifecycleOwner) { order ->
+            if (order.zamowienia.isEmpty()) {
+                tvSummary.text = "Brak zamówień"
+                tvTotal.text = "Suma: 0 zł"
+            } else {
+                val sb = StringBuilder()
+                order.zamowienia.forEachIndexed { index, p ->
+                    sb.append("Osoba ${index + 1}: ${p.osobaNazwa}\n")
+                    sb.append("Zupa: ${p.zupa ?: "-"}\n")
+                    sb.append("Danie: ${p.danieGl ?: "-"}\n")
+                    sb.append("Napój: ${p.napoj ?: "-"}\n")
+                    sb.append("Cena: ${p.cena} zł\n\n")
                 }
+                tvSummary.text = sb.toString()
+                tvTotal.text = "Suma: ${order.totalAll()} zł"
             }
+        }
+
+        btnSubmit.setOnClickListener {
+            Toast.makeText(requireContext(), "Zamówienie złożone ✅", Toast.LENGTH_SHORT).show()
+        }
+
+        btnNew.setOnClickListener {
+            Toast.makeText(requireContext(), "Nowe zamówienie", Toast.LENGTH_SHORT).show()
+        }
+
+        btnClear.setOnClickListener {
+            viewModel.wyczyscWszystko()
+            Toast.makeText(requireContext(), "Wyczyszczono ✅", Toast.LENGTH_SHORT).show()
+        }
     }
 }

@@ -7,12 +7,37 @@
     <fragment
         android:id="@+id/startFragment"
         android:name="com.example.kuchnia_polska.ui.StartFragment"
-        android:label="Start" />
+        android:label="Start">
+        <action
+            android:id="@+id/action_start_to_menuChoice"
+            app:destination="@id/menuChoiceFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
 
     <fragment
         android:id="@+id/menuChoiceFragment"
         android:name="com.example.kuchnia_polska.ui.MenuChoiceFragment"
-        android:label="Zamówienie" />
+        android:label="Zamówienie">
+    <action
+        android:id="@+id/action_menuChoice_to_ready"
+        app:destination="@id/readyMealFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"/>
+
+    <action
+        android:id="@+id/action_menuChoice_to_custom"
+        app:destination="@id/customMealFragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
 
     <fragment
         android:id="@+id/summaryFragment"

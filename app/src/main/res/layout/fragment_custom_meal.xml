@@ -1,14 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.CustomMealFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wybierz zupę:"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/custom_img_rosol"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/rosolek"
+                android:contentDescription="Rosół"/>
+
+            <RadioButton
+                android:id="@+id/custom_rb_rosol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rosół"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/custom_img_pomidorowa"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/pomidorowa"
+                android:contentDescription="Pomidorowa"/>
+
+            <RadioButton
+                android:id="@+id/custom_rb_pomidorowa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pomidorowa"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wybierz danie główne:"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/custom_img_schabowy"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/schabowy"
+                android:contentDescription="Schabowy"/>
+
+            <RadioButton
+                android:id="@+id/custom_rb_schabowy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Schabowy"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/custom_img_pierogi"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/pierogi"
+                android:contentDescription="Pierogi"/>
+
+            <RadioButton
+                android:id="@+id/custom_rb_pierogi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pierogi"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wybierz napój:"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/custom_img_woda"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/woda"
+                android:contentDescription="Woda"/>
+
+            <RadioButton
+                android:id="@+id/custom_rb_woda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Woda"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/custom_img_kompot"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/kompot"
+                android:contentDescription="Kompot"/>
+
+            <RadioButton
+                android:id="@+id/custom_rb_kompot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kompot"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/custom_btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dodaj do zamówienia"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</ScrollView>
